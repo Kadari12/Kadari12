@@ -1,55 +1,22 @@
-import java.util.Collections;
-import java.util.LinkedList;
-
-//create two linked lists then reverse the numbers,convert to two numbers then add the number,then reverse the result numbers?
 
 
-public class LinkedListReverse {
+public class Multiplesofnumbers {
 public static void main(String[] args) {
-	LinkedList<Integer> list1=new LinkedList<>();
-	LinkedList<Integer> list2=new LinkedList<>();
-	list1.add(3);
-	list1.add(7);
-	list1.add(8);
-	list2.add(7);
-	list2.add(4);
-	list2.add(2);
-	//list1=3,7,8
-	//list2=7,4,2
-	//after reversed l1= 8,7,3 l2=2,4,7
-	
-	Collections.reverse(list1);
-	Collections.reverse(list2);
-	int digit1=listToNumber(list1);
-			int digit2=listToNumber(list2);
-			int sum=digit1+digit2;
-			int reversedSum=reversedSum(sum);
-	System.out.println(list1);
-	System.out.println(list2);
-	System.out.println(digit1);
-	System.out.println(digit2);
-	System.out.println(sum);
-	System.out.println(reversedSum);
-}
-public static int listToNumber(LinkedList<Integer> list)
-{
-	int number=0;
-	for(int digit:list)
+	for(int i=1;i<=100;i++)
 	{
-		number=number*10+digit;
-		
+		if(i%4==0)
+		{
+			System.out.println("four");
+		}
+		else if(i%6==0)
+		{
+			System.out.println("six"); 
+		}
+		else if(i%4==0&&i%6==0)
+		{
+			System.out.println("fosix");
+		}
 	}
-	return number;
-}
-public static int reversedSum(int number)
-{
-	int reverse=0;
-	while(number!=0)
-	{
-		int lastdigit=number%10;
-		reverse=reverse*10+lastdigit;
-		number=number/10;
-	}
-	return reverse;
 }
 }
+
