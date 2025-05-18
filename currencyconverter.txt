@@ -1,0 +1,41 @@
+package Practise;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class CurrencyConverter {
+static Map<String, Double> currencies=new HashMap<>();
+static {
+currencies.put("USD",1.0);//US doller
+currencies.put("EUR",0.91);//Europian euro
+currencies.put("INR",83.0);//indian rupee
+currencies.put("JPY",154.65);//japanese yen
+currencies.put("GBP",0.78);//british pond
+}
+public static void main(String[] args) {
+System.out.println("available currencies"+ currencies.keySet());
+Scanner sc=new Scanner(System.in);
+//give input currency code from the user to convert 
+System.out.println("enter source currency code");
+String fromCurrency=sc.nextLine().toUpperCase();
+//give target currency code from user to convert
+System.out.println("enter target currency code");
+String toCurrency=sc.nextLine().toUpperCase();
+if(!currencies.containsKey(toCurrency)||!currencies.containsKey(fromCurrency))
+{
+	System.out.println("invalid currency code.please try again");
+}
+//enter amount to convert
+System.out.println("enter amount ");
+double amount=sc.nextDouble();
+double usdAmount=amount/currencies.get(fromCurrency);
+double convertedAmount=usdAmount*currencies.get(toCurrency);
+System.out.println("after conversion");
+System.out.println(amount);
+System.out.println(fromCurrency);
+System.out.println(toCurrency);
+System.out.println(usdAmount);
+System.out.println(convertedAmount);
+}
+}
+
+
